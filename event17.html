@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+        .area{
+            height: 100px;
+            width:200px;
+            background-color: black;
+            font-size: 20px;
+            color: #fff
+        }
+    </style>
+</head>
+<body>
+<!--<button onclick="alert('salam dünya'); console.log('testt'); "> Hesapla</button> "" kullandığımız için ' tek tırnak kullanabiliriz. -->
+
+
+<!-- <button id="deneme" onclick="document.getElementById('deneme').innerHTML = ' Hesaplandı '">Hesapla</button>-->
+
+
+<button onclick="this.innerHTML='Hesaplandı'">Hesapla</button>
+<!--this komutu document.getElementById... komutu yerine geçer çünkü aynı satırı tanımlayabiliyor. Ayrıca daha pratik bir kullanımı var.-->
+
+
+
+
+<input type="text" onchange="console.log('Girilen değer Değiştiiii!!!!')">
+
+
+
+<select id="liste" onchange='document.getElementById("container").innerHTML = this.value;
+'>   <!-- selecet içersinde normalde şu vardı onchange="console.log('degiştiii')" bu olmadan js ile yapıcam.    -->
+    <option>ankara</option>   <!--alt + sağ click birden fazla öğe seçip düzenlemeye yarıyor.    -->
+    <option selected >bursa</option>
+    <option>ceyhan</option>
+</select>
+<div id="container"></div>
+
+<div class="area" onmouseover="areaMouseOver()" onmouseout="this.innerHTML='artık değilsin:('" >
+</div>
+<script>
+
+function areaMouseOver(){
+    document.getElementsByClassName("area")[0].innerHTML='buradasııınn' // getElementsByClassName komutu çoğul bir komuttur. O yüzden bir seçenek (class) belirtmen gerekiyor oda [0],[1],[2] gibi belirtilir.
+
+}
+
+
+document.getElementById("container").innerHTML = document.getElementById("liste").value;
+
+</script>
+</body>
+</html>
