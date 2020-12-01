@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<script>
+    // Özellikler... Property // Properties & Metotlar..
+
+    var araba = {
+        name : "PORSCHE",
+        model : "2017",
+        weight : 1000,
+        color :"red",
+
+        start : function (){
+            alert("araba çalışti!!!!!");
+
+        },
+        drive : function (){
+            alert ("Araba hareket ediyor!!");
+        },
+        brake : function (){
+            alert("Araba fren yaptı!!");
+        },
+        stop : function (){
+            alert(" Araba durdu.");
+        },
+        getİnfo : function (){
+
+            console.log("Ad :" + araba.name);
+            console.log("Model :"+ araba.model);
+            console.log("Renk :"+ this.color); // This komutu kendi objesini yazdırır.
+        },
+        getAge : function (){
+            return 2020 - this.model;
+        }
+    };
+    console.log(araba);
+
+//Özelliklere ulaşmak...
+
+    console.log(araba.color);
+    console.log(araba.name);
+    console.log(araba.weight); // Alt satırda aynı işlevi görüyor.
+    console.log(araba["weight"]);
+    //Özellikleri değiştirmek
+
+    araba.getİnfo();
+
+    araba.color = "black";
+    console.log(araba);
+    araba.start();
+    araba.drive();
+    araba.brake();
+    araba.stop();
+
+    alert("Aracın yaşı : "+ araba.getAge());
+</script>
+</body>
+</html>
